@@ -6,9 +6,15 @@
 </head>
 <body>
 <h1>Wordle Helper</h1>
-<input id="query" placeholder="*Query. Eg: a*h*"/>
-<input id="exclude" placeholder="Exclude. Eg: bg"/>
-<input id="yellow" placeholder="Yellow. Eg: hj"/>
+<div style="padding-bottom: 8px">Welcome cheaters and english noobs. </div>
+<div style="padding-bottom: 8px">Use this page to find words that can be used for wordle. Not all words in this list actually is in wordle itself.</div>
+<div style="padding-bottom: 8px">If there are any words that this page, start a github issue or something <a href="https://github.com/dividezero/wordle-helper/issues/new">here</a></div>
+<br/>
+<div style="padding-bottom: 16px">Basically, replace unknown alphabets with * in the query bos, then list all your grey and yellow alphabets in the other 2 boxes</div>
+
+<input id="query" placeholder="Query. eg: *a*h*" maxlength="5" onkeypress="return /[a-z*]/i.test(event.key)"/>
+<input id="exclude" placeholder="Exclude. eg: bgckp" onkeypress="return /[a-z]/i.test(event.key)"/>
+<input id="yellow" placeholder="Yellow. eg: hj" onkeypress="return /[a-z]/i.test(event.key)"/>
 <button onclick="dosearch()">search</button>
 <div id="words"></div>
 
