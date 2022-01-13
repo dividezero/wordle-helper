@@ -46,7 +46,7 @@
                 .map(alphabet => alphabet === '*' ? '[a-z]' : alphabet)
                 .join('')
               const regex = new RegExp(regexStr);
-              let result = words.filter(word => regex.test(index))
+              let result = words.filter(word => regex.test(word))
               for(let ex of exclude){
                 result = result.filter(res => !res.includes(ex))
               }
