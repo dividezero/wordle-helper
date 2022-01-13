@@ -6,14 +6,25 @@
 </head>
 <body>
 <h1>Wordle Helper</h1>
-<input id="query" placeholder="*a*h*"/> <button onclick="dosearch()">search</button>
+<input id="query" placeholder="*Query. Eg: a*h*"/>
+<input id="exclude" placeholder="Exclude. Eg: bg"/>
+<input id="yellow" placeholder="Yellow. Eg: hj"/>
+<button onclick="dosearch()">search</button>
 <div id="words"></div>
 
 
 <script>
 
   function dosearch() {
-    const query = document.getElementById("query").value || 0
+    const query = document.getElementById("query").value.trim() || 0
+    const yellow = document.getElementById("yellow").value.trim()
+      .split('') || []
+    let exclude = document.getElementById("exclude").value.trim()
+      .split('')
+      .filter(a => !query.includes(a))
+      .filter(a => !yellow.includes(a))
+      || []
+    console.log({exclude})
 
     if (query.length !== 5) {
       document.getElementById("words").innerHTML = "query must be 5 letters";
@@ -29,8 +40,13 @@
                 .map(alphabet => alphabet === '*' ? '[a-z]' : alphabet)
                 .join('')
               const regex = new RegExp(regexStr);
-              const result = words.filter(word => regex.test(word))
-              console.log(result)
+              let result = words.filter(word => regex.test(word))
+              for(let ex of exclude){
+                result = result.filter(res => !res.includes(ex))
+              }
+                for(let yel of yellow){
+                result = result.filter(res => res.includes(yel))
+              }
               const res2 = result.map(a => '<div>' + a + '</div>').join('');
               document.getElementById("query").innerHTML = query;
               document.getElementById("words").innerHTML = res2;
