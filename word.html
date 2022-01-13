@@ -6,46 +6,42 @@
 </head>
 <body>
 <h1>Wordle Helper</h1>
-<div>
-    <p>put the query in the param</p>
-    <p>eg: <a href="https://dividezero.github.io/wordle-helper/word.html?q=**bu*">https://dividezero.github.io/wordle-helper/word.html?q=**bu*</a></p>
-</div>
-<h3 id="query"></h3>
+<input id="query" placeholder="*a*h*"/> <button onclick="dosearch()">search</button>
 <div id="words"></div>
 
 
 <script>
 
-  console.log("asdadas")
-  const params = new URLSearchParams(window.location.search)
-  const query = params.get('q') || 0
+  function dosearch() {
+    const query = document.getElementById("query").value || 0
 
-  if (query.length !== 5) {
-    document.getElementById("words").innerHTML = "query must be 5 letters";
-  } else {
-    fetch('https://raw.githubusercontent.com/dividezero/wordle-helper/main/words.txt')
-      .then(function (response) {
-        // The API call was successful!
-        response.text()
-          .then(starter => {
-            const words = starter.split('\n');
-            console.log(words);
-            const regexStr = query.split('')
-              .map(alphabet => alphabet === '*' ? '[a-z]' : alphabet)
-              .join('')
-            const regex = new RegExp(regexStr);
-            const result = words.filter(word => regex.test(word))
-            console.log(result)
-            const res2 = result.map(a => '<div>' + a + '</div>').join('');
-            document.getElementById("query").innerHTML = query;
-            document.getElementById("words").innerHTML = res2;
+    if (query.length !== 5) {
+      document.getElementById("words").innerHTML = "query must be 5 letters";
+    } else {
+      fetch('https://raw.githubusercontent.com/dividezero/wordle-helper/main/words.txt')
+        .then(function (response) {
+          // The API call was successful!
+          response.text()
+            .then(starter => {
+              const words = starter.split('\n');
+              console.log(words);
+              const regexStr = query.split('')
+                .map(alphabet => alphabet === '*' ? '[a-z]' : alphabet)
+                .join('')
+              const regex = new RegExp(regexStr);
+              const result = words.filter(word => regex.test(word))
+              console.log(result)
+              const res2 = result.map(a => '<div>' + a + '</div>').join('');
+              document.getElementById("query").innerHTML = query;
+              document.getElementById("words").innerHTML = res2;
 
-          })
+            })
 
-      }).catch(function (err) {
-      // There was an error
-      console.warn('Something went wrong.', err);
-    });
+        }).catch(function (err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+      });
+    }
   }
 </script>
 </body>
