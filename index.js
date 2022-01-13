@@ -6,10 +6,8 @@ if(query.length !== 5) {
     console.error("query must be 5 letters")
 }
 else {
-    const data = fs.readFileSync('words_alpha.txt').toString();
+    const data = fs.readFileSync('words.txt').toString();
     const words = data.split('\n')
-        .map(word => word.replace('\r',''))
-        .filter(word => word.length === 5)
 
     const regexStr = query.split('')
         .map(alphabet => alphabet === '*'? '[a-z]': alphabet)
