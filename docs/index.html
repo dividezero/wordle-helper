@@ -30,7 +30,6 @@
       .filter(a => !query.includes(a))
       .filter(a => !yellow.includes(a))
       || []
-    console.log({exclude})
 
     if (query.length !== 5) {
       document.getElementById("words").innerHTML = "query must be 5 letters";
@@ -41,7 +40,6 @@
           response.text()
             .then(starter => {
               const words = starter.split('\n');
-              console.log(words);
               const regexStr = query.split('')
                 .map(alphabet => alphabet === '*' ? '[a-z]' : alphabet)
                 .join('')
