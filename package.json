@@ -2,7 +2,7 @@
   "name": "wordle-helper",
   "version": "1.0.0",
   "description": "a helper for wordle",
-  "main": "index.js",
+  "main": "wordle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -8,7 +8,7 @@ Basically just run it and replace `*` with the unknown alphabets
 
 Eg: If you got ?,?,B,U,? run the below command
 ```
-node index.js "**bu*"
+node wordle.js "**bu*"
 ```
 
 ## Yellow words
