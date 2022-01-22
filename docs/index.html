@@ -22,10 +22,10 @@
 <script>
 
   function dosearch() {
-    const query = document.getElementById("query").value.trim() || 0
-    const yellow = document.getElementById("yellow").value.trim()
+    const query = document.getElementById("query").value.trim().toLowerCase() || 0
+    const yellow = document.getElementById("yellow").value.trim().toLowerCase()
       .split('') || []
-    let exclude = document.getElementById("exclude").value.trim()
+    let exclude = document.getElementById("exclude").value.trim().toLowerCase()
       .split('')
       .filter(a => !query.includes(a))
       .filter(a => !yellow.includes(a))
