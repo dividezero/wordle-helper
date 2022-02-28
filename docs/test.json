@@ -1,3 +1,42 @@
-{
-"test":"tester"
-}
+[
+    {
+        text: `I really lo-ove cats`
+    },
+    {
+        text: `I really loooooove cats`
+    },
+    {
+        text: `I really LOVE cats`
+    },
+    {
+        text: `I really luvluvluvluvluv cats`
+    },
+    {
+        text: "Do you like cats?",
+        isQuestion: true,
+        buttons: [
+            {
+                label: `Yes!`,
+                goToDialog: 6,
+                triggeredActions:  () => {
+                    // NPC plays an animation to celebrate
+                }
+            },
+            {
+                label: `Not really...`,
+                goToDialog: 5,
+                triggeredActions:  () => {
+                    // NPC waves goodbye
+                }
+            },
+        ]
+    },
+    {
+        text: `Awwh thats too bad`,
+        isEndOfDialog: true
+    },
+    {
+        text: `Hey me too!  They're so cuuute!`,
+        isEndOfDialog: true
+    },
+]
