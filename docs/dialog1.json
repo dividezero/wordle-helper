@@ -1,36 +1,36 @@
 [
-    {
-        "text": "I really lo-ove cats"
-    },
-    {
-        "text": "I really loooooove cats"
-    },
-    {
-        "text": "I really LOVE cats"
-    },
-    {
-        "text": "I really luvluvluvluvluv cats"
-    },
-    {
-        "text": "Do you like cats?",
-        "isQuestion": true,
-        "isQuestion": [
-            {
-                "label": "Yes!",
-                "goToDialog": 6
-            },
-            {
-                "label": "Not really...",
-                "goToDialog": 5
-            }
-        ]
-    },
-    {
-        "text": "Awwh thats too bad",
-        "isEndOfDialog": true
-    },
-    {
-        "text": "Hey me too!  They're so cuuute!",
-        "isEndOfDialog": true
-    },
+  {
+    "text": "I really lo-ove cats"
+  },
+  {
+    "text": "I really loooooove cats"
+  },
+  {
+    "text": "I really LOVE cats"
+  },
+  {
+    "text": "I really luvluvluvluvluv cats"
+  },
+  {
+    "text": "Do you like cats?",
+    "isQuestion": true,
+    "buttons": [
+      {
+        "label": "Yes!",
+        "goToDialog": 6
+      },
+      {
+        "label": "Not really...",
+        "goToDialog": 5
+      }
+    ]
+  },
+  {
+    "text": "Awwh thats too bad",
+    "isEndOfDialog": true
+  },
+  {
+    "text": "Hey me too!  They're so cuuute!",
+    "isEndOfDialog": true
+  }
 ]
