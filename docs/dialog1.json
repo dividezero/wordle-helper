@@ -17,7 +17,7 @@
     "buttons": [
       {
         "label": "Yes!",
-        "goToDialog": 6
+        "goToDialog": 6,
         "triggeredActions":  () => { log("asdasdsa") }
       },
       {
