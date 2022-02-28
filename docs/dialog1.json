@@ -1,42 +1,42 @@
 [
     {
-        text: `I really lo-ove cats`
+        "text": "I really lo-ove cats"
     },
     {
-        text: `I really loooooove cats`
+        "text": "I really loooooove cats"
     },
     {
-        text: `I really LOVE cats`
+        "text": "I really LOVE cats"
     },
     {
-        text: `I really luvluvluvluvluv cats`
+        "text": "I really luvluvluvluvluv cats"
     },
     {
-        text: "Do you like cats?",
-        isQuestion: true,
-        buttons: [
+        "text": "Do you like cats?",
+        "isQuestion": true,
+        "isQuestion": [
             {
-                label: `Yes!`,
-                goToDialog: 6,
-                triggeredActions:  () => {
+                "label": "Yes!",
+                "goToDialog": 6,
+                "goToDialog":  () => {
                     // NPC plays an animation to celebrate
                 }
             },
             {
-                label: `Not really...`,
-                goToDialog: 5,
-                triggeredActions:  () => {
+                "label": "Not really...",
+                "goToDialog": 5,
+                "triggeredActions":  () => {
                     // NPC waves goodbye
                 }
             },
         ]
     },
     {
-        text: `Awwh thats too bad`,
-        isEndOfDialog: true
+        "text": "Awwh thats too bad",
+        "isEndOfDialog": true
     },
     {
-        text: `Hey me too!  They're so cuuute!`,
-        isEndOfDialog: true
+        "text": "Hey me too!  They're so cuuute!",
+        "isEndOfDialog": true
     },
 ]
