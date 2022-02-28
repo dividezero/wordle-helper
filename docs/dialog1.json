@@ -19,16 +19,14 @@
                 "label": "Yes!",
                 "goToDialog": 6,
                 "goToDialog":  () => {
-                    // NPC plays an animation to celebrate
                 }
             },
             {
                 "label": "Not really...",
                 "goToDialog": 5,
                 "triggeredActions":  () => {
-                    // NPC waves goodbye
                 }
-            },
+            }
         ]
     },
     {
