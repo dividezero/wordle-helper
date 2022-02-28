@@ -17,15 +17,11 @@
         "isQuestion": [
             {
                 "label": "Yes!",
-                "goToDialog": 6,
-                "goToDialog":  () => {
-                }
+                "goToDialog": 6
             },
             {
                 "label": "Not really...",
-                "goToDialog": 5,
-                "triggeredActions":  () => {
-                }
+                "goToDialog": 5
             }
         ]
     },
